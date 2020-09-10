@@ -6,9 +6,9 @@ Here's a live demo: [https://zoovu-game-vue.vercel.app](https://zoovu-game-vue.v
 
 ## Screenshots
 
-![Zoovue Game](screenshot1.png)
+![Zoovue Game](screenshot1.PNG)
 
-![Zoovue Game](screenshot2.png)
+![Zoovue Game](screenshot2.PNG)
 
 ## Project setup
 ```
