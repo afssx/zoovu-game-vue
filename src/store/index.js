@@ -5,15 +5,20 @@ import Visibility from "visibilityjs";
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
-  state: {
+let timeOut = null;
+const getDefaultState = () => {
+  return {
     username: null,
     score: 0,
     playing: false,
     time: 0,
     $interval: null,
     dialog: false,
-  },
+  };
+};
+
+export default new Vuex.Store({
+  state: getDefaultState(),
   mutations: {
     SET_USERNAME(state, username) {
       state.username = username;
@@ -32,6 +37,9 @@ export default new Vuex.Store({
     },
     SET_DIALOG(state, payload) {
       state.dialog = payload;
+    },
+    RESET_STATE(state) {
+      Object.assign(state, getDefaultState());
     },
   },
   actions: {
@@ -55,7 +63,7 @@ export default new Vuex.Store({
       await dispatch("stopTimer");
       commit("SET_PLAYING", false);
       commit("SET_DIALOG", true);
-      setTimeout(() => {
+      timeOut = setTimeout(() => {
         dispatch("restartGame");
       }, 10000);
     },
@@ -66,9 +74,11 @@ export default new Vuex.Store({
       commit("INCREMENT_SCORE");
       if (state.score === 5) dispatch("endGame");
     },
-    restartGame(){
-
-    }
+    restartGame({ commit }) {
+      clearTimeout(timeOut);
+      commit("RESET_STATE");
+      router.push({ name: "Start" });
+    },
   },
   modules: {},
 });

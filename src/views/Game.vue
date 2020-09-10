@@ -42,7 +42,7 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="primary" text @click="showDialog(false)">
+            <v-btn color="primary" text @click="restartGame">
               Ok
             </v-btn>
           </v-card-actions>
@@ -57,7 +57,7 @@
   import BoardSlot from "../components/BoardSlot";
   import Card from "../components/Card";
   import GameHeader from "../components/GameHeader";
-  import { mapState, mapMutations } from "vuex";
+  import { mapState, mapActions } from "vuex";
 
   export default {
     name: "Game",
@@ -86,9 +86,7 @@
       ...mapState(["dialog", "username", "time"]),
     },
     methods: {
-      ...mapMutations({
-        showDialog: "SET_DIALOG",
-      }),
+      ...mapActions(["restartGame"]),
       shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
           let j = Math.floor(Math.random() * (i + 1));
