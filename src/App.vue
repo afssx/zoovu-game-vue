@@ -13,15 +13,9 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    // background: rgb(245, 246, 249);
-    // background: linear-gradient(
-    //   180deg,
-    //   rgba(245, 246, 249, 1) 0%,
-    //   rgba(252, 252, 252, 1) 100%
-    // );
   }
 
-  #app:after {
+  #app::after {
     content: "";
     background-image: url(./assets/logo.svg);
     width: 100%;

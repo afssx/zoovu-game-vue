@@ -1,5 +1,15 @@
 # zoovu-game
 
+## :link: Live Demo
+
+Here's a live demo: [https://zoovu-game-vue.vercel.app](https://zoovu-game-vue.vercel.app/#/)
+
+## Screenshots
+
+![Zoovue Game](screenshot1.png)
+
+![Zoovue Game](screenshot2.png)
+
 ## Project setup
 ```
 yarn install

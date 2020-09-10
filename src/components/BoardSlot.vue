@@ -14,7 +14,7 @@
 <script>
   import { mapActions, mapState, mapMutations } from "vuex";
   export default {
-    name: 'BoardSlot',
+    name: "BoardSlot",
     data() {
       return {
         dragging: false,
@@ -32,11 +32,9 @@
         this.dragging = false;
         const card_id = dataTransfer.getData("card_id");
         const card_img = dataTransfer.getData("card_img");
-        console.log({ target: target.id, card_img });
         if (target.id != "board-1") {
           let letterSlot = target.id.split("-")[1];
           if (letterSlot != card_img) {
-            console.info("+10");
             this.punishTime();
           } else {
             this.incrementScore();
