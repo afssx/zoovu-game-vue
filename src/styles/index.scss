@@ -1,0 +1,21 @@
+.v-application{
+  overflow: hidden;
+}
+.v-main {
+  background: rgb(231, 231, 231);
+  background: linear-gradient(
+    0deg,
+    rgba(231, 231, 231, 1) 0%,
+    rgba(254, 254, 254, 1) 100%
+  );
+}
+
+.v-main::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/logo.svg);
+  transform: rotate(-30deg);
+  background-size: contain; 
+}
